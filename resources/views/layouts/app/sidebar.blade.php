@@ -21,6 +21,14 @@
                         {{ __('Counter') }}
                     </flux:sidebar.item>
 
+                    <flux:sidebar.item icon="book-open-text" :href="route('posts')" :current="request()->routeIs('posts')" wire:navigate>
+                        {{ __('Posts') }}
+                    </flux:sidebar.item>
+
+                    <flux:sidebar.item icon="book-open-text" :href="route('posts.create')" :current="request()->routeIs('post.create')" wire:navigate>
+                        {{ __('Posts Create') }}
+                    </flux:sidebar.item>
+
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 
