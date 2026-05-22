@@ -10,7 +10,6 @@ test('creates a post successfully', function () {
         ->call('save')
         ->assertRedirect('/posts');
 
-
     expect(session('success'))
         ->toBe('Post created successfully!');
 });
