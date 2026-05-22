@@ -18,6 +18,14 @@ new class extends Component
 <div>
     <div wire:loading.class='opacity-50'
         class="relative h-full flex-1 overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 p-6 shadow-lg">
+
+        @if (session('success'))
+        <div
+            class="mb-4 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm font-medium text-green-400">
+            {{ session('success') }}
+        </div>
+        @endif
+
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-neutral-700">
                 <thead class="bg-neutral-800">

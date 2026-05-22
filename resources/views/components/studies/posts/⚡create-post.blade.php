@@ -16,6 +16,8 @@ new class extends Component
             'content' => 'required',
         ]));
 
+        session()->flash('success', 'Post created successfully!');
+
         $this->redirect('/posts');
     }
 };
