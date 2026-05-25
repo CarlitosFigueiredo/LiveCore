@@ -11,6 +11,8 @@ new class extends Component
 
     public function save(): void
     {
+        sleep(1);
+
         Post::create($this->validate([
             'title' => 'required|min:3',
             'content' => 'required',
@@ -33,10 +35,16 @@ new class extends Component
 
             <flux:textarea wire:model='content' label='Content' />
 
-            <button type="submit"
-                class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-indigo-500 active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-neutral-900">
-                Save
-            </button>
+            <flux:radio.group wire:model="status" label="Status" variant="cards" class="max-sm:flex-col">
+                <flux:radio value="draft" label="Draft" description="Post will be saved as draft" checked />
+                <flux:radio value="published" label="Published" description="Post will be published immediately" />
+            </flux:radio.group>
+
+            <div class="flex justify-end">
+                <flux:button type="submit" variant="primary" >
+                    Create post
+                </flux:button>
+            </div>
         </form>
     </div>
 </div>
